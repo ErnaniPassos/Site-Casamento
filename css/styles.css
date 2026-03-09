@@ -163,7 +163,7 @@ body {
 
 .petala {
     position: absolute;
-    background-image: url('./assets/petala.png'); /* caminho certo da imagem */
+    background-image: url('assets/petala.png'); /* caminho certo da imagem */
     background-size: cover;
     background-repeat: no-repeat;
     opacity: 0.8;
