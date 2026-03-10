@@ -24,22 +24,22 @@ if (fotoAtual) {
     const fotos = []
     for (let i = 1; i <= totalFotos; i++) {
         let numero = String(i).padStart(3, "0")
-        fotos.push(`assets/image/civil/${numero}.jpg`)
-        
+        fotos.push(`assets/image/Civil/${numero}.jpg`)
+
     }
 
     let indice = 0
     const btnPrev = document.querySelector(".prev")
     const btnNext = document.querySelector(".next")
-    
+
     function mostrarFoto() {
         fotoAtual.src = fotos[indice]
         fotoAtual.style.opacity = 0
 
-    setTimeout(() => {
-        fotoAtual.src = fotos[indice]
-        fotoAtual.style.opacity = 1
-    }, 500)
+        setTimeout(() => {
+            fotoAtual.src = fotos[indice]
+            fotoAtual.style.opacity = 1
+        }, 500)
     }
 
     function proxima() {
@@ -88,10 +88,10 @@ if (fotoAtualReligioso) {
         fotoAtualReligioso.src = fotosReligioso[indiceReligioso]
         fotoAtualReligioso.style.opacity = 0
 
-    setTimeout(() => {
-        fotoAtualReligioso.src = fotosReligioso[indiceReligioso]
-        fotoAtualReligioso.style.opacity = 1
-    }, 500)
+        setTimeout(() => {
+            fotoAtualReligioso.src = fotosReligioso[indiceReligioso]
+            fotoAtualReligioso.style.opacity = 1
+        }, 500)
     }
 
 
@@ -113,49 +113,49 @@ if (fotoAtualReligioso) {
 
     btnNextReligioso.addEventListener("click", proximaReligioso)
     btnPrevReligioso.addEventListener("click", anteriorReligioso)
-    
+
     setInterval(proximaReligioso, 5000)
 }
 
 //petalas
 const container = document.getElementById('petalas-container');
 if (container) {
-function criarPetala() {
-    const petala = document.createElement('div');
-    petala.classList.add('petala');
+    function criarPetala() {
+        const petala = document.createElement('div');
+        petala.classList.add('petala');
 
-    // posição horizontal aleatória
-    petala.style.left = Math.random() * window.innerWidth + 'px';
+        // posição horizontal aleatória
+        petala.style.left = Math.random() * window.innerWidth + 'px';
 
-    // tamanho e velocidade aleatórios
-    const tamanho = 30 + Math.random() * 60;
-    petala.style.width = tamanho + 'px';
-    petala.style.height = tamanho + 'px';
+        // tamanho e velocidade aleatórios
+        const tamanho = 30 + Math.random() * 60;
+        petala.style.width = tamanho + 'px';
+        petala.style.height = tamanho + 'px';
 
-    const duracao = 5 + Math.random() * 5; // 5 a 10 segundos
-    petala.style.animationDuration = duracao + 's';
+        const duracao = 5 + Math.random() * 5; // 5 a 10 segundos
+        petala.style.animationDuration = duracao + 's';
 
-    container.appendChild(petala);
+        container.appendChild(petala);
 
-    // remove pétala depois que anima
-    setTimeout(() => {
-        petala.remove();
-    }, duracao * 1000);
-}
+        // remove pétala depois que anima
+        setTimeout(() => {
+            petala.remove();
+        }, duracao * 1000);
+    }
 
-// gera pétalas a cada 200ms
-setInterval(criarPetala, 500);
+    // gera pétalas a cada 200ms
+    setInterval(criarPetala, 500);
 }
 
 // musica
 const musica = document.getElementById("musica");
 const btnMusica = document.getElementById("btn-musica");
 
-if (musica && btnMusica){
+if (musica && btnMusica) {
     musica.volume = 0.3;
     let tocando = false;
     btnMusica.addEventListener("click", () => {
-        if(tocando){
+        if (tocando) {
             musica.pause();
             btnMusica.textContent = "🔇";
         } else {
