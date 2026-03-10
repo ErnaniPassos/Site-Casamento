@@ -1,154 +1,196 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+/* ================================
+RESET / BASE
+================================ */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
 }
-a {
-    text-decoration: none;
-    color: rgba(255, 182, 193, 0.5);
-    cursor: pointer;
-    transition: 0.4s;
+
+html,body{
+    background:#111;
+    height:100%;
+    overflow-x:hidden;
+}
+
+/* ================================
+LINKS
+================================ */
+
+a{
+    text-decoration:none;
+    color:rgba(255,182,193,0.5);
+    cursor:pointer;
+    transition:0.4s;
 }
 
 a:hover,
-a:focus {
-      color: rgba(255, 182, 193, 1);
+a:focus{
+    color:rgba(255,182,193,1);
 }
 
-a:active {
-    transform: scale(0.98);
+a:active{
+    transform:scale(0.98);
 }
 
-html , body {
-    background: #111;
-    height: 100%;
-    overflow-x: hidden;
+/* ================================
+BANNER CAPA
+================================ */
+
+.banner-casamento{
+    min-height:100vh;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+    url("../assets/image/capa.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    color:white;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+
+    padding:40px;
+
+    animation:zoomCapa 20s ease-in-out infinite alternate;
 }
 
-.banner-casamento {
-    min-height: 100vh;
-    background:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url("../assets/image/capa.jpg");
-    background-size: cover;
-    background-position: center;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 40px;
-    animation: zoomCapa 20s ease-in-out infinite alternate;
-}
+/* ================================
+TEXTOS CAPA
+================================ */
 
 .titulo-topo{
-    display: flex;
-    justify-content: flex-start;
-    font-size: 50px;
-    color: rgba(255, 182, 193, 0.5);
+    display:flex;
+    justify-content:flex-start;
+    font-size:clamp(16px,8vw,45px);
+    color:rgba(255,182,193,0.5);
 }
 
-.titulo-centro {
-    font-family: Homemade Apple;
-    text-align: center;
-    font-size: clamp(40px, 8vw, 100px);
-    color: rgba(255, 182, 193, 0.5);
-    text-decoration: none;
-    transition: 0.4s;
+.titulo-centro{
+    font-family:Homemade Apple;
+
+    text-align:center;
+
+    font-size:clamp(24px,8vw,90px);
+
+    color:rgba(255,182,193,0.5);
 }
 
-.data {
-    display: flex;
-    justify-content: flex-end;
-    font-size: 50px;
-    color: rgba(255, 182, 193, 0.5);
+.data{
+    display:flex;
+    justify-content:flex-end;
+    font-size:clamp(16px,8vw,45px);
+    color:rgba(255,182,193,0.5);
 }
+
+/* ================================
+MENU
+================================ */
 
 .menu{
-    min-height: 100vh;
-    background:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    min-height:100vh;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
     url("../assets/image/capa.jpg");
-    background-size: cover;
-    background-position: center;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 40px;
-    animation: zoomCapa 20s ease-in-out infinite alternate;
+
+    background-size:cover;
+    background-position:center;
+
+    color:white;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:40px;
+
+    animation:zoomCapa 20s ease-in-out infinite alternate;
 }
 
+.titulo-menu{
+    font-family:Homemade Apple;
 
-.titulo-menu {
-    font-family: Homemade Apple;
-    font-size: clamp(32px, 6vw, 55px);
-    color: rgba(255, 182, 193, 0.5);
+    font-size:clamp(24px,6vw,45px);
+
+    color:rgba(255,182,193,0.5);
 }
 
-.link-menu {
-    display: flex;
-    justify-content: space-around;
-     width: 100%;
-    font-size: 55px;
-}
-.civil,.religioso{font-family: Homemade Apple;}
+.link-menu{
+    display:flex;
+    justify-content:space-around;
 
-.carousel {
-    width: 100%;
+    width:100%;
+
+    font-size:clamp(24px,6vw,45px);
+}
+
+.civil,
+.religioso{
+    font-family:Homemade Apple;
+}
+
+/* ================================
+CAROUSEL
+================================ */
+
+.carousel{
+    width:100%;
     max-height:160px;
-    overflow: hidden;
+    overflow:hidden;
 }
 
-.carousel-track {
-    width: max-content;
-    animation: scroll 300s linear infinite;
-    will-change: transform;
-}
-
-.carousel-track img {
-    width:240px;
-    height:135px;
-    object-fit: cover;
-    flex-shrink: 0;
-    border-radius: 18px;
-}
 .carousel-container{
     width:100%;
     overflow:hidden;
 }
 
-@keyframes scroll{
-    from{
-        transform: translateX(0);
-    }
-    to{
-        transform: translateX(-50%);
-    }
+.carousel-track{
+    width:max-content;
+    animation:scroll 300s linear infinite;
+    will-change:transform;
 }
 
-.voltar-menu{
-    position: fixed;
-    top: 30px;
-    left: 30px;
-    width: 60px;
-    height: 20px;
-    font-size: 24px;
-    z-index: 1000;
+.carousel-track img{
+    width:240px;
+    height:135px;
+
+    object-fit:cover;
+    flex-shrink:0;
+
+    border-radius:18px;
 }
-.galeria-civil,.galeria-religioso{
-    width: 100%;
-    height: 100vh;
+
+/* ================================
+GALERIA
+================================ */
+
+.galeria-civil,
+.galeria-religioso{
+    width:100%;
+    height:100vh;
+
     display:flex;
     justify-content:center;
     align-items:center;
-    position: relative;
+
+    position:relative;
 }
 
 .foto-container{
     width:100%;
     height:100%;
+
     display:flex;
     justify-content:center;
     align-items:center;
+
     background:black;
 }
 
@@ -157,107 +199,195 @@ html , body {
     max-height:100%;
     object-fit:contain;
 }
-#foto-atual,#foto-atual-religioso{
-    opacity: 1;
-    transition: opacity 0.8s ease;
-}
-.btn,.btn-prev,.btn-next {
-    position: absolute;
-    top: 40%;
-    transform: translateY(-50%);
-    font-size: 40px;
-    background: black;
-    border: none;
-    color: rgba(255, 182, 193, 0.5);
-    cursor: pointer;
-    backdrop-filter: blur(5px);
+
+#foto-atual,
+#foto-atual-religioso{
+    opacity:1;
+    transition:opacity 0.8s ease;
 }
 
-.prev,.btn-prev { left: 40px; }
+/* ================================
+BOTÕES GALERIA
+================================ */
 
-.next,.btn-next { right: 40px; }
+.btn,
+.btn-prev,
+.btn-next{
 
-.petala {
-    position: absolute;
-    background-image: url('assets/petala.png'); /* caminho certo da imagem */
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 0.8;
-    will-change: transform;
-    animation-name: cair;
-    animation-timing-function: linear;
-   
+    position:absolute;
+    top:40%;
+
+    transform:translateY(-50%);
+
+    font-size:40px;
+
+    background:black;
+    border:none;
+
+    color:rgba(255,182,193,0.5);
+
+    cursor:pointer;
+
+    backdrop-filter:blur(5px);
 }
-#petalas-container{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    overflow: hidden;
+
+.prev,
+.btn-prev{
+    left:40px;
 }
 
-@keyframes cair {
-    0% {
-        transform: translateY(-50px) rotate(0deg);
-        opacity: 0;
-    }
-    20% {
-        opacity: 0,8;
-    }
-    100% {
-        transform: translateY(110vh) rotate(360deg);
-        opacity: 0.6;
-    }
+.next,
+.btn-next{
+    right:40px;
+}
+
+/* ================================
+BOTÕES FIXOS
+================================ */
+
+.voltar-menu{
+    position:fixed;
+    top:30px;
+    left:30px;
+
+    width:60px;
+    height:20px;
+
+    font-size:clamp(12px,6vw,24px);
+
+    z-index:1000;
 }
 
 #btn-musica{
-    position: fixed;
-    top: 30px;
-    right: 30px;
-    width: 60px;
-    height: 20px;
-    border-radius: 50%;
-    border: none;
-    background: rgba(0,0,0,0.5);
-    color: rgba(255,182,193,0.9);
-    font-size: 26px;
-    backdrop-filter: blur(6px);
-    cursor: pointer;
-    transition: 0.25s;
-    z-index: 10000;
+    position:fixed;
+
+    top:30px;
+    right:30px;
+
+    width:60px;
+    height:20px;
+
+    border-radius:50%;
+    border:none;
+
+    background:rgba(0,0,0,0.5);
+
+    color:rgba(255,182,193,0.9);
+
+    font-size:24px;
+
+    backdrop-filter:blur(6px);
+
+    cursor:pointer;
+
+    transition:0.25s;
+
+    z-index:10000;
 }
 
 #btn-musica:hover{
-    transform: scale(1.1);
-    background: rgba(0,0,0,0.8);
+    transform:scale(1.1);
+    background:rgba(0,0,0,0.8);
 }
-@keyframes zoomCapa {
-    from {
-        background-size: 100%;
+
+/* ================================
+PÉTALAS
+================================ */
+
+#petalas-container{
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    pointer-events:none;
+
+    overflow:hidden;
+}
+
+.petala{
+    position:absolute;
+
+    background-image:url('assets/petala.png');
+    background-size:cover;
+    background-repeat:no-repeat;
+
+    opacity:0.8;
+
+    will-change:transform;
+
+    animation-name:cair;
+    animation-timing-function:linear;
+}
+
+/* ================================
+ANIMAÇÕES
+================================ */
+
+@keyframes scroll{
+    from{ transform:translateX(0); }
+    to{ transform:translateX(-50%); }
+}
+
+@keyframes cair{
+
+    0%{
+        transform:translateY(-50px) rotate(0deg);
+        opacity:0;
     }
-    to {
-        background-size: 110%;
+
+    20%{
+        opacity:0.8;
+    }
+
+    100%{
+        transform:translateY(110vh) rotate(360deg);
+        opacity:0.6;
     }
 }
 
-@media (max-width: 768px){
+@keyframes zoomCapa{
+
+    from{
+        background-size:100%;
+    }
+
+    to{
+        background-size:110%;
+    }
+}
+
+/* ================================
+RESPONSIVO
+================================ */
+
+@media (max-width:768px){
+
+    .titulo-topo,
+    .data{
+        font-size:24px;
+    }
 
     .titulo-menu{
-        font-size: 34px;
-        text-align: center;
+        font-size:32px;
+        text-align:center;
     }
 
     .link-menu{
-        width: 100%;
-        max-width: 500px;
-        flex-direction: column;
-        gap: 25px;
-        font-size: 32px;
-        align-items: center;
+
+        width:100%;
+        max-width:500px;
+
+        flex-direction:column;
+
+        gap:25px;
+
+        font-size:24px;
+
+        align-items:center;
     }
 
 }
-
-
