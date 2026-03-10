@@ -264,7 +264,7 @@ BOTÕES FIXOS
     top:30px;
     right:30px;
 
-    width:60px;
+    width:20px;
     height:20px;
 
     border-radius:50%;
@@ -372,7 +372,7 @@ RESPONSIVO
     }
 
     .titulo-menu{
-        font-size:32px;
+        font-size:24px;
         text-align:center;
     }
 
@@ -382,12 +382,58 @@ RESPONSIVO
         max-width:500px;
 
         flex-direction:column;
+        text-align: center;
 
-        gap:25px;
+        gap:10px;
 
-        font-size:24px;
+        font-size:16px;
 
         align-items:center;
     }
 
+    .voltar-menu{
+    position:fixed;
+    top:20px;
+    left:20px;
+
+    width:20px;
+    height:20px;
+
+    font-size:16px;
+
+     white-space: nowrap;
+
+    z-index:1000;
+}
+#btn-musica{
+    position:fixed;
+
+    top:15px;
+    right:30px;
+
+    width:20px;
+    height:20px;
+
+    border-radius:50%;
+    border:none;
+
+    background:rgba(0,0,0,0.5);
+
+    color:rgba(255,182,193,0.9);
+
+    font-size:12px;
+
+    backdrop-filter:blur(6px);
+
+    cursor:pointer;
+
+    transition:0.25s;
+
+    z-index:10000;
+}
+
+#btn-musica:hover{
+    transform:scale(1.1);
+    background:rgba(0,0,0,0.8);
+}
 }
