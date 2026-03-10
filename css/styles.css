@@ -73,8 +73,7 @@ TEXTOS CAPA
 }
 
 .titulo-centro {
-    font-family: Homemade Apple;
-
+    
     text-align: center;
 
     font-size: clamp(24px, 8vw, 90px);
@@ -84,6 +83,7 @@ TEXTOS CAPA
 
 .titulo-centro span {
     display: inline;
+    font-family: Homemade Apple;
 }
 
 
