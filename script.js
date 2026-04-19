@@ -65,16 +65,67 @@ if (fotoAtual) {
     setInterval(proxima, 5000)
 }
 
+//GALERIA FOTOS PRE-CASAMENTO
+const fotoAtualPreCasamento = document.getElementById("foto-atual-pre-casamento")
+
+if (fotoAtualPreCasamento) {
+
+    const totalFotosPreCasamento = 322
+    const fotosPreCasamento = []
+
+    for (let i = 1; i <= totalFotosPreCasamento; i++) {
+        let numeroPreCasamento = String(i).padStart(3, "0")
+        fotosPreCasamento.push(`assets/image/Pre-casamento/${numeroPreCasamento}.jpg`)
+        console.log(numeroPreCasamento)
+    }
+
+    let indicePreCasamento = 0
+
+    const btnPrevPreCasamento = document.querySelector(".btn-prev")
+    const btnNextPreCasamento = document.querySelector(".btn-next")
+
+    function mostrarFotoPreCasamento() {
+        fotoAtualPreCasamento.src = fotosPreCasamento[indicePreCasamento]
+        fotoAtualPreCasamento.style.opacity = 0
+
+        setTimeout(() => {
+            fotoAtualPreCasamento.src = fotosPreCasamento[indicePreCasamento]
+            fotoAtualPreCasamento.style.opacity = 1
+        }, 500)
+    }
+
+
+    function proximaPreCasamento() {
+        indicePreCasamento++
+        if (indicePreCasamento >= fotosPreCasamento.length) {
+            indicePreCasamento = 0
+        }
+        mostrarFotoPreCasamento()
+    }
+
+    function anteriorPreCasamento() {
+        indicePreCasamento--
+        if (indicePreCasamento < 0) {
+            indicePreCasamento = fotosPreCasamento.length - 1
+        }
+        mostrarFotoPreCasamento()
+    }
+
+    btnNextPreCasamento.addEventListener("click", proximaPreCasamento)
+    btnPrevPreCasamento.addEventListener("click", anteriorPreCasamento)
+
+    setInterval(proximaPreCasamento, 5000)
+}
 //GALERIA FOTOS RELIGIOSO
 const fotoAtualReligioso = document.getElementById("foto-atual-religioso")
 
 if (fotoAtualReligioso) {
 
-    const totalFotosReligioso = 47
+    const totalFotosReligioso = 1368
     const fotosReligioso = []
 
     for (let i = 1; i <= totalFotosReligioso; i++) {
-        let numeroReligioso = String(i).padStart(3, "0")
+        let numeroReligioso = String(i).padStart(4, "0")
         fotosReligioso.push(`assets/image/Religioso/${numeroReligioso}.jpg`)
         console.log(numeroReligioso)
     }
