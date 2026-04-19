@@ -424,6 +424,13 @@ RESPONSIVO
         font-size: 20px;
     }
 
+    .pre,
+    .civil,
+    .religioso {
+        align-self: center;
+    }
+
+
     .link-menu a {
         width: auto;
         text-align: center;
